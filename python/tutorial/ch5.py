@@ -87,3 +87,177 @@ print(freshfruit)
 vec = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 [num for elem in vec for num in elem]
 
+
+"""
+# TODO
+"""
+matrix = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+]
+
+[[row[i] for row in matrix] for i in range(4)]
+
+transposed = []
+for i in range(4):
+    transposed.append([row[i] for row in matrix])
+
+print(transposed)
+
+
+"""
+# TODO
+"""
+transposed = []
+for i in range(4):
+    transposed_row = []
+    for row in matrix:
+        transposed_row.append(row[i])
+    transposed.append(transposed_row)
+
+print(transposed)
+
+
+"""
+# TODO
+"""
+print(list(zip(*matrix)))
+
+
+b = [-1, 1, 66.25, 333, 333, 1234.5]
+del b[0]
+print(b)
+
+del b[2:4]
+print(b)
+
+del b[:]
+print(b)
+
+
+"""
+# TODO
+"""
+t = 12345, 54321, 'hello!'
+print(t[0])
+print(t)
+
+u = t, (1, 2, 3, 4, 5)
+print(u)
+
+#t[0] = 88888
+
+v = ([1, 2, 3], [3, 2, 1])
+print(v)
+
+
+"""
+# TODO
+"""
+empty = ()
+sigleton = 'hello',
+len(empty)
+len(sigleton)
+print(sigleton)
+
+x, y, z = t
+
+
+"""
+# TODO
+"""
+basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
+print(basket)
+'orange' in basket
+'crabgrass' in basket
+
+a = set('abracadabra')
+b = set('alacazam')
+print(a)
+print(a-b)
+print(a&b)
+print(a^b)
+
+b = {x for x in 'abracadabra' if x not in 'abc'}
+print(b)
+
+
+"""
+# TODO
+"""
+tel = {'jack': 4098, 'sape': 4139}
+tel['guido'] = 4127
+print(tel)
+print(tel['jack'])
+del tel['sape']
+tel['irv'] = 4127
+print(tel)
+print(list(tel.keys()))
+print(sorted(tel.keys()))
+print('guido' in tel)
+print('jack' not in tel)
+
+
+"""
+# TODO
+"""
+dict([('sape', 4139), ('guido', 4127), ('jack', 4098)])
+{x: x**2 for x in (2, 4, 6)}
+dict(sape=4139, guido=4127, jack=4098)
+
+knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+for k, v in knights.items():
+    print(k, v)
+
+for i, v in enumerate(['tic', 'tac', 'toe']):
+    print(i, v)
+
+questions = ['name', 'quest', 'favorite color']
+answers = ['lancelot', 'the holy grail', 'blue']
+for q, a in zip(questions, answers):
+    print('What is your {0}? It is {1}.' .format(q, a))
+
+for i in reversed(range(1, 10, 2)):
+    print(i)
+
+
+"""
+# TODO
+"""
+basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
+for f in sorted(set(basket)):
+    print(f)
+
+
+"""
+# TODO
+"""
+import math
+raw_data = [56.2, float('NaN'), 51.7, 55.3, 52.5, float('NaN'), 47.8]
+filtered_data = []
+for value in raw_data:
+    if not math.isnan(value):
+        filtered_data.append(value)
+
+print(filtered_data)
+
+
+"""
+# TODO
+"""
+string1, string2, string3 = '', 'Trondheim', 'Hammer Dance'
+non_null = string1 or string2 or string3
+print(non_null)
+
+
+"""
+# TODO
+"""
+(1, 2, 3) < (1, 2, 4)
+[1, 2, 3] < [1, 2, 4]
+'ABC' < 'C' < 'Pascal' < 'Python'
+(1, 2, 3, 4) < (1, 2, 4)
+(1, 2) < (1, 2, -1)
+(1, 2, 3) == (1.0, 2.0, 3.0)
+(1, 2, ('aa', 'ab')) < (1, 2, ('abc', 'a'), 4)
