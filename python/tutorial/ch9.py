@@ -60,7 +60,7 @@ print(x.i)
 
 
 """
-TODO
+멤버함수, 멤버변수를 class 외부에서 할당, 외부에서 접근
 """
 x.counter = 1
 while x.counter < 10:
@@ -69,10 +69,6 @@ while x.counter < 10:
 print(x.counter)
 del x.counter
 
-
-"""
-TODO
-"""
 x.f()
 
 xf = x.f
@@ -184,16 +180,15 @@ multiple inheritance
 
 class DerivedClassName(Base1, Base2, Base3):
     blah blah...
-"""
 
 
-"""
 Private Variables
 
 _variable -> private instance로 간주
 
 아래 예제에서는 self.__update 변수가 private instance
 """
+
 class Mapping:
     def __init__(self, iterable):
         self.items_list = []
@@ -212,7 +207,7 @@ class MappingSubclass(Mapping):
 
 
 """
-TODO
+클래스를 변수에 할당 후 멤버변수에 값 주기
 """
 class Employee:
     pass
@@ -226,7 +221,7 @@ john.salary = 1000
 
 
 """
-TODO
+B, C, D 출력
 """
 class B(Exception):
     pass
@@ -247,20 +242,8 @@ for cls in [B, C, D]:
 
 
 """
-TODO
+값을 넣으면 뒤집어서 출력하는 예제
 """
-for element in [1, 2, 3]:
-    print(element)
-for element in (1, 2, 3):
-    print(element)
-for key in {'one':1, 'two': 2}:
-    print(key)
-for char in "123":
-    print(char)
-for line in open("myfile.txt")
-    print(line, end=' ')
-
-
 class Reverse:
     def __init__(self, data):
         self.data = data
@@ -279,10 +262,6 @@ print(iter(rev))
 for char in rev:
     print(char)
 
-
-"""
-TODO
-"""
 def reverse(data):
     for index in range(len(data)-1, -1, -1):
         yield data[index]
@@ -290,10 +269,6 @@ def reverse(data):
 for char in reverse('golf'):
     print(char)
 
-
-"""
-TODO
-"""
 sum(i*i for i in range(10))
 xvec = [10, 20, 30]
 yvec = [7, 5, 3]
