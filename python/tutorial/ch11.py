@@ -20,7 +20,7 @@ doc = """The wrap() method is awesome awesome blahblah yeah awesome fantastic ba
 print(textwrap.fill(doc, width=40))
 
 
-"""TODO -> Error 뜨는데?
+"""TODO -> Error 뜨는데? setlocale error;
 """
 import locale
 locale.setlocale(locale.LC_ALL, 'English_United States.1252')
@@ -47,7 +47,7 @@ t.substitute(d)
 t.safe_substitute(d)
 
 
-"""TODO
+""" time 모듈은 시간과 관련된 함수들 제공
 """
 import time, os.path
 photofiles = ['img.jpg', 'img2.jpg']
@@ -64,7 +64,7 @@ for i, filename in enumerate(photofiles):
     print('{0} --> {1}'.format(filename, newname))
 
 
-"""TODO
+""" struct module은 pack 함수와 unpack 함수를 제공
 """
 import struct
 
@@ -86,7 +86,8 @@ for i in range(3):
     start += extra_size + comp_size
 
 
-"""TODO
+""" threading 모듈은 thread 생성, join, start 등을 할 수 있는
+thread와 관련된 모듈
 """
 import threading, zipfile
 
@@ -109,7 +110,8 @@ background.join()
 print('Main program waited until background was done.')
 
 
-"""TODO
+""" logging module은 debug할 때, Error, Warning 등이 났을 때
+설정할 수 있는 문구들
 """
 import logging
 logging.debug('Debugging information')
@@ -119,7 +121,11 @@ logging.error('Error occurred')
 logging.critical('Critical error -- shutting down')
 
 
-"""TODO
+""" gc module은 garbage collector 
+del a 수행 후 gc.collect() 를 수행하면 지워진 a 변수에 남아있는
+쓰레기값을 제거해준다
+weakref module은 object를 reference 변수를 생성하지 않고 
+트래킹하는 거 
 """
 import weakref, gc
 class A:
@@ -138,7 +144,7 @@ gc.collect()
 d['primary'] # This occurrs error
 
 
-"""TODO
+""" array 모듈은 array object 제공
 """
 from array import array
 a = array('H', [4000, 10, 700, 22222])
@@ -147,7 +153,7 @@ a[1:3]
 array('H', [10, 700])
 
 
-"""TODO
+""" chap5에서 했던 거 
 """
 from collections import deque
 d = deque(["task1", "task2", "task3"])
@@ -163,7 +169,7 @@ def breadth_first_search(unsearched):
         unsearched.append(m)
 
 
-"""TODO
+""" bisect 모듈을 쓰면 오름차순으로 순서대로 정리
 """
 import bisect
 scores = [(100, 'perl'), (200, 'tcl'), (400, 'lua'), (500, 'python')]
@@ -171,7 +177,7 @@ bisect.insort(scores, (300, 'ruby'))
 print(scores)
 
 
-"""TODO
+""" heapq 모듈은 list를 기본으로 heap 자료구조 제공 
 """
 from heapq import heapify, heappop, heappush
 data = [1, 3, 5, 7, 9, 2, 4, 6, 8, 0]
@@ -180,7 +186,7 @@ heappush(data, -5)
 [heappop(data) for i in range(3)]
 
 
-"""TODO
+""" decimal 모듈은 decimal datatype을 제공
 """
 from decimal import *
 round(Decimal('0.70') * Decimal('1.05'), 2)
