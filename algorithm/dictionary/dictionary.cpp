@@ -1,32 +1,56 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <vector>
 
 int n;
 char words[200][20];
+char sorting[26];
 
-vector<vector<int> > adj;
+// 알파벳간에 관계 생성
+void makeGraph(const char* word) { 
+}
 
-void makeGraph(const vector<string>& word) {
-    adj = vecotr<vector<int> >(26, vector<int>(26, 0));
-    for(int j = 1; j < words.size(); ++j) {
-        int i = j-1, len = min(word[i].size(), word[j].size());
 
-        for(int k = 0; k < len; ++k) {
-            if(word[i][k] != word[j][k]) {
-                int a = words[i][k] - 'a';
-                int b = words[j][k] - 'a';
-                adj[a][b] = 1;
-                break;
+// 생성된 관계가 유효한지 체크
+int valid_check() {
+    int i, j;
+
+    printf("debug\n");
+    for(i=0; i < n; ++i) {
+        printf("%c", sorting[i]);
+    }
+    printf("\n");
+
+    for(i=0; i < n; ++i) {
+        for(j=0; j < n; ++j) {
+            if(sorting[i] == sorting[j] && i != j) {
+                return -1;   
             }
         }
     }
+
+    return 0;
 }
 
 
 void dictionary() {
-       
+    int i, j;
+
+    for(i=0; i < n; ++i) {
+        makeGraph(words[i]);
+    }
+
+    printf("reuslt\n");
+
+    if(valid_check() == -1) {
+        printf("INVALID HYPOTHESIS\n");
+
+    } else {
+        for(j=0; j < n; ++j) {
+            printf("%c", sorting[j]);
+        }
+        printf("\n");
+    }
 }
 
 
@@ -41,6 +65,8 @@ int main(void) {
         for(i=0; i < n; ++i) {
             scanf("%s", words[i]); 
         }
+
+        dictionary();
     }
 
     return 0;
