@@ -25,6 +25,9 @@ void owlCalculation(const int num) {
         }
     }
 
+    for(j=0; j < i-1; ++j) {
+        // TODO
+    }
 
     printf("sum : %d\n", sum_digit);
 

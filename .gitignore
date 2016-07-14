@@ -1,3 +1,7 @@
 *.swp
 *.cpp~
 __pycache__/
+
+sm/
+
+node-test/
